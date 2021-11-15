@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - JHub Module 1</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<br>
+<img id="image" src="https://www.royalnavy.mod.uk/-/media/fleet/images/02---our-organisation/2-4-royal-marines/masthead-fightingarm-1500x1090-assets/2-4-organisation-fightingarm-royalmarines-crest.png?h=300&la=en-GB&w=300&hash=1DAD03C3AC08659281723D3E5F1EAA83" alt="RM Logo">
+
+
+<div class="flex-container">
+  
+  <div id="yellow"></div>
+  <div id="green"></div>
+  <div id="red"></div>
+  
+</div>
+
+<header id="header">
+  <h1>Royal Marines Band Service Shop</h1>
+  <p><i>Order your RM Band memorabilia here!</i></p>
+   </header>
+
+
+<div class="gear">
+  <div class="geartile">
+    <img  id="pith" src="https://i.pinimg.com/originals/e9/f6/64/e9f6647fd79a528100b8e5cff05fb11f.jpg" alt="Pith Helmet">
+    <p>Pith Helmet</p>
+    <p>£100</p>
+    <label>Quantity:
+    </label>
+      <input id="pithQuantity"
+             type= "number"
+             max="99"
+             min="0"
+         onchange= "document.getElementById('pithprice').innerHTML = cost();">
+    <p>Accessories?</p>
+    <ul class="accessories">
+    <li><label><input 
+           id="pithPaint"
+           name="paint"
+           type="checkbox"
+           value=10
+           onchange="document.getElementById('pithprice').innerHTML = cost();">
+      </label>White Paint - £10</li>
+    <li><label><input 
+           id="pithBrasses"
+           name="brasses"
+           type="checkbox"
+           value=50
+                      onchange="document.getElementById('pithprice').innerHTML = cost();">
+      </label>Stay-bright Brasses - £50</li>
+    <li><label><input 
+           id="pithCarrier"
+           name="carrier"
+           type="checkbox"
+           value=25
+                      onchange="document.getElementById('pithprice').innerHTML = cost();">
+      </label>Protective Carrier - £25</li></ul>
+      <p id="pithprice">Total = £0</p><script>cost()</script>
+      <button
+              type="submit"
+            onclick="openForm()"class="addtobasket"
+              >Add to Basket</button>
+    </div>
+  
+  <div class="geartile">
+    <img  id="drum" src="https://drummersreview.com/wp-content/uploads/2019/04/BDC_Marching_Marines_03.jpg" alt="Side Drum">
+    <p>Military Side Drum</p>
+    <p>£200</p>
+    <label>Quantity:
+    </label>
+      <input id="drumQuantity"
+             type= "number"
+             max="99"
+             min="0"
+             onchange= "document.getElementById('drumprice').innerHTML = drumPrice();">
+    <p>Accessories?</p>
+    <ul class="accessories">
+    <li><label><input 
+                      id="drumSticks"
+                      name="sticks"
+           type="checkbox"
+           value="15"
+                      onchange= "document.getElementById('drumprice').innerHTML = drumPrice();">
+      </label>Drum Sticks - £15</li>
+    <li><label><input 
+                      id="drumHeads"
+                      name="skins"
+           type="checkbox"
+           value="12"
+                      onchange= "document.getElementById('drumprice').innerHTML = drumPrice();">
+      </label>Replacement Heads - £12</li>
+    <li><label><input 
+                      id="drumKey"
+                      name="key"
+           type="checkbox"
+           value="5"
+                      onchange= "document.getElementById('drumprice').innerHTML = drumPrice();">
+      </label>Drum Key - £5</li></ul>
+      <p id="drumprice">Total = £</p>
+      <script>drumPrice()
+      </script>
+      <button class="addtobasket"
+               type="submit"
+            onclick="openForm()">Add to Basket</button>
+    </div>
+  
+  <div class="geartile">
+    <img  id="bugle" src="https://i.pinimg.com/originals/28/53/37/285337ed75311ff12b246cdd17089ba0.jpg" alt="Bugle">
+    <p>Bugle</p>
+    <p>£150</p>
+    <label>Quantity:
+    </label>
+      <input id="bugleQuantity"
+             type= "number"
+             max="99"
+             min="0"
+             onchange= "document.getElementById('buglePrice').innerHTML = buglePrice();">
+    <p>Accessories?</p>
+    <ul class="accessories">
+    <li><label><input 
+           id="bugleCloth"
+           name="cloth"
+           type="checkbox"
+           value="3"
+                      onchange= "document.getElementById('buglePrice').innerHTML = buglePrice();">
+      </label>Polishing cloth - £3</li>
+    <li><label><input 
+           id="bugleCord"
+           name="cord"
+           type="checkbox"
+           value="17"
+                       onchange= "document.getElementById('buglePrice').innerHTML = buglePrice();">
+      </label>Carry cord - £17</li>
+    <li><label><input 
+           id="bugleMouthpiece"
+           name="mouthpiece"
+           type="checkbox"
+           value="35"
+                       onchange= "document.getElementById('buglePrice').innerHTML = buglePrice();">
+      </label>Mouthpiece - £35</li></ul>
+      <p id="buglePrice">Total = £</p>
+      <script>buglePrice()
+      </script>
+    <button 
+              class="addtobasket"                       id="bugleBasket"
+              type="submit"
+            onclick="openForm()">
+        Add to Basket</button>
+     </div>
+  
+  <form id="basket"
+          class="basket"
+          action="/action_page.php">
+    <h2>Pay now!</h2>
+      <label for="cardnumber"><b>Card Number</b></label>
+    <input type="text" placeholder="XXXX XXXX XXXX XXXX" id="cardnumber" required><br>
+    <label for="cardname"><b>Card Name</b></label>
+    <input type="text" placeholder="Name on card" id="cardname" required><br>
+    <label for="expiry"><b>Expiry Date</b></label>
+    <input type="text" placeholder="XX/XX" id="expiry" required><br>
+    <label for="cvc"><b>Security code</b></label>
+    <input type="text" placeholder="CVC" id="cvc" required><br>
+    <button>Pay now</button>
+    <button
+            type="button"
+            
+            onclick="closeForm()">Cancel</button>
+    </form>
+</div>
+   
+
+
+<footer id="completeorder">
+      Made by James Stammers 2020
+</footer>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

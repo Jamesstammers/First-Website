@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #000032;
+  text-align: center;
+  color: white;
+
+}
+
+#image{
+  height: 20vh;
+  padding: 10px;
+  animation-name: logo;
+  animation-duration: 2s;
+}
+
+@keyframes logo{
+  0%{
+  margin-left: 50vw;
+  }
+  100%{
+   margin-left: 0px;
+  }
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  height: 5vh;
+  }
+
+#yellow{
+  background: #ffcc00;
+  height: 20%;
+}
+
+
+#green {
+  background: #006532;
+  height: 20%;
+}
+
+#red {
+  background: #fe0000;
+  height: 40%;
+}
+
+#header{
+ animation-name: header;
+ animation-duration: 2s;
+ }
+
+@keyframes header{
+  0%{
+  margin-right: 50vw;
+  }
+  100%{
+   margin-right: 0;
+  }
+}
+
+.gear{
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+
+
+.geartile {
+  width: 30vw;
+  height: auto;
+  border: solid;
+   
+  }
+
+@media (max-width: 900px) {
+  .gear{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  .geartile{
+    width: 80vw;
+    padding-bottom: 40px;
+  }
+}
+#pith{
+  padding-top: 10px;
+  width: 90%;
+}
+
+
+#drum{
+  padding-top: 10px;
+  width: 90%;
+}
+
+
+
+#bugle{
+  padding-top: 10px;
+  width: 90%;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.accessories{
+  display: inline-block;
+  text-align: left;
+}
+
+.addtobasket{
+ margin-bottom: 1vw;
+}
+
+#completeorder{
+  background: #ffcc00;
+  color: black;
+  padding: 1vh;
+  
+  }
+
+.basket{
+  background: #ffcc00;
+  color: black;
+  display: none;
+  position: fixed;
+  bottom: 10vh;
+  top: 10vh;
+  width: 25vw;
+  border: solid;
+  border-color: white;
+  }
+
+@media (max-width: 900px) {
+  .basket{
+   width: 70vw; 
+  }
